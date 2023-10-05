@@ -63,11 +63,13 @@ The simplest way is to mount your `/data` drive following instructions here http
 
 ## RNAseq permutations
 **Align with**:
-- [Salmon](https://combine-lab.github.io/salmon/) (Transcriptome-based)
-- [Kallisto](https://pachterlab.github.io/kallisto/) (Transcriptome-based)
-- [STAR](https://github.com/alexdobin/STAR) (Genome + Features File-based)
-- [RSubread](https://bioconductor.org/packages/release/bioc/html/Rsubread.html) (Genome + Features File-based)
+- [Salmon](https://combine-lab.github.io/salmon/) (Transcriptome-based) [Biowulf guide](https://hpc.nih.gov/apps/salmon.html)
+- [Kallisto](https://pachterlab.github.io/kallisto/) (Transcriptome-based) [Biowulf guide](https://hpc.nih.gov/apps/kallisto.html)
+- [STAR](https://github.com/alexdobin/STAR) (Genome + Features File-based) [Biowulf guide](https://hpc.nih.gov/apps/STAR.html)
+- [RSubread](https://bioconductor.org/packages/release/bioc/html/Rsubread.html) (Genome + Features File-based) [Biowulf guide](https://hpc.nih.gov/apps/subread.html)
 
+
+## For hackathon day 2:
 **Analyze with**
 - [DEseq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)
 - [sleuth](https://pachterlab.github.io/sleuth/about)
