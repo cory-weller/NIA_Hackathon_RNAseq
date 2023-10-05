@@ -24,7 +24,7 @@ Double click on the session to connect. It will prompt you for your password. If
 you are on the NIH network OR connected to NIHVPN.
 
 # Connecting to Biowulf on a mac
-For connecting on a Mac, you can use the built-in terminal app. From the terminal, run the command
+For connecting on a Mac, you can use the built-in terminal app. From the terminal, run the following command (replacing your own ID instead of `computingid`):
 ```bash
 ssh computingid@biowulf.nih.gov
 ```
