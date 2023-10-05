@@ -41,3 +41,37 @@ salloc: Waiting for resource configuration
 salloc: Nodes cn4338 are ready for job
 ```
 At which point you're ready to go.
+
+
+## Overview for hackathon day 1
+- get required tools
+- connect to biowulf
+- set up data mounted drive
+- navigate directories
+- find our data
+- RNA seq broad overview
+- specific RNAseq tools and how they differ
+- retrieving reference from web
+- preparing reference
+- aligning to reference overview
+- tiny data overview
+
+## Editing scripts
+The simplest way is to mount your `/data` drive following instructions here https://hpc.nih.gov/docs/helixdrive.html and then editing files using VScode.
+
+[VScode web link](https://vscode.dev/)
+
+## RNAseq permutations
+**Align with**:
+- [Salmon](https://combine-lab.github.io/salmon/) (Transcriptome-based)
+- [Kallisto](https://pachterlab.github.io/kallisto/) (Transcriptome-based)
+- [STAR](https://github.com/alexdobin/STAR) (Genome + Features File-based)
+- [RSubread](https://bioconductor.org/packages/release/bioc/html/Rsubread.html) (Genome + Features File-based)
+
+**Analyze with**
+- [DEseq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)
+- [sleuth](https://pachterlab.github.io/sleuth/about)
+
+**Compare at**
+- Transcript-level
+- Gene-level
