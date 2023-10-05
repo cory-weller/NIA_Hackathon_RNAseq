@@ -68,6 +68,58 @@ The simplest way is to mount your `/data` drive following instructions here http
 - [STAR](https://github.com/alexdobin/STAR) (Genome + Features File-based) [Biowulf guide](https://hpc.nih.gov/apps/STAR.html)
 - [RSubread](https://bioconductor.org/packages/release/bioc/html/Rsubread.html) (Genome + Features File-based) [Biowulf guide](https://hpc.nih.gov/apps/subread.html)
 
+## Data location
+Files are located at `/data/NIA_Hackathon_2023/RNA_sequencing` which contains two subfolders, organized as follows:
+```
+.
+├── data
+│   ├── Foliate_1_R1.clean.fq.gz
+│   ├── Foliate_1_R2.clean.fq.gz
+│   ├── Foliate_2_R1.clean.fq.gz
+│   ├── Foliate_2_R2.clean.fq.gz
+│   ├── Foliate_3_R1.clean.fq.gz
+│   ├── Foliate_3_R2.clean.fq.gz
+│   ├── Foliate_4_R1.clean.fq.gz
+│   ├── Foliate_4_R2.clean.fq.gz
+│   ├── Foliate_5_R1.clean.fq.gz
+│   ├── Foliate_5_R2.clean.fq.gz
+│   ├── Organoid_1_R1.clean.fq.gz
+│   ├── Organoid_1_R2.clean.fq.gz
+│   ├── Organoid_2_R1.clean.fq.gz
+│   ├── Organoid_2_R2.clean.fq.gz
+│   ├── Organoid_3_R1.clean.fq.gz
+│   ├── Organoid_3_R2.clean.fq.gz
+│   ├── Organoid_4_R1.clean.fq.gz
+│   ├── Organoid_4_R2.clean.fq.gz
+│   ├── Organoid_5_R1.clean.fq.gz
+│   └── Organoid_5_R2.clean.fq.gz
+└── tiny
+    ├── tinyFoliate_1_R1.clean.fq.gz
+    ├── tinyFoliate_1_R2.clean.fq.gz
+    ├── tinyFoliate_2_R1.clean.fq.gz
+    ├── tinyFoliate_2_R2.clean.fq.gz
+    ├── tinyFoliate_3_R1.clean.fq.gz
+    ├── tinyFoliate_3_R2.clean.fq.gz
+    ├── tinyFoliate_4_R1.clean.fq.gz
+    ├── tinyFoliate_4_R2.clean.fq.gz
+    ├── tinyFoliate_5_R1.clean.fq.gz
+    ├── tinyFoliate_5_R2.clean.fq.gz
+    ├── tinyOrganoid_1_R1.clean.fq.gz
+    ├── tinyOrganoid_1_R2.clean.fq.gz
+    ├── tinyOrganoid_2_R1.clean.fq.gz
+    ├── tinyOrganoid_2_R2.clean.fq.gz
+    ├── tinyOrganoid_3_R1.clean.fq.gz
+    ├── tinyOrganoid_3_R2.clean.fq.gz
+    ├── tinyOrganoid_4_R1.clean.fq.gz
+    ├── tinyOrganoid_4_R2.clean.fq.gz
+    ├── tinyOrganoid_5_R1.clean.fq.gz
+    └── tinyOrganoid_5_R2.clean.fq.gz
+
+2 directories, 40 files
+```
+
+The `tiny` files are a random subset of reads, representing about 2% of the full data.
+The small size files are useful for testing scripts to make sure they work, instead of the big files. Once you know your workflow is correctly built, you can instead use the full-sized files.
 
 ## For hackathon day 2:
 **Analyze with**
@@ -77,3 +129,5 @@ The simplest way is to mount your `/data` drive following instructions here http
 **Compare at**
 - Transcript-level
 - Gene-level
+
+**Visualize**
