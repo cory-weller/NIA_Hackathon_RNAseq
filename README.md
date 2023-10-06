@@ -135,6 +135,16 @@ source STAR_wrappers.sh
 gnu_parallel
 ```
 
+## Index `bam` files
+```bash
+cd /data/NIA_Hackathon_2023/RNA_sequencing/STAR_BAM
+module load samtools
+
+for file in *.bam; do
+    samtools index ${file}
+done
+```
+
 
 ## For hackathon day 2:
 **Analyze with**
