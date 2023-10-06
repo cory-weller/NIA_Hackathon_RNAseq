@@ -121,6 +121,21 @@ Files are located at `/data/NIA_Hackathon_2023/RNA_sequencing` which contains tw
 The `tiny` files are a random subset of reads, representing about 2% of the full data.
 The small size files are useful for testing scripts to make sure they work, instead of the big files. Once you know your workflow is correctly built, you can instead use the full-sized files.
 
+## Create STAR genome index
+See [STAR_index.sh](STAR_index.sh)
+
+## Align `fastq` files to the indexed genome
+[`STAR_wrappers.sh`](STAR_wrappers.sh) contains three example functions that will submit all 10 jobs.
+
+```bash
+# Load the file with 'source' so you can use the functions
+source STAR_wrappers.sh
+
+# submit jobs with the GNU parallel funciton defined in STAR_wrappers.sh
+gnu_parallel
+```
+
+
 ## For hackathon day 2:
 **Analyze with**
 - [DEseq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)
