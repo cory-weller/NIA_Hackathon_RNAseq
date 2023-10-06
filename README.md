@@ -122,7 +122,7 @@ The `tiny` files are a random subset of reads, representing about 2% of the full
 The small size files are useful for testing scripts to make sure they work, instead of the big files. Once you know your workflow is correctly built, you can instead use the full-sized files.
 
 ## Create STAR genome index
-See [STAR_index.sh](STAR_index.sh)
+See [STAR_index.sh](STAR_index.sh) which was submitted via `sbatch STAR_index.sh`
 
 ## Align `fastq` files to the indexed genome
 [`STAR_wrappers.sh`](STAR_wrappers.sh) contains three example functions that will submit all 10 jobs.
