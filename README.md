@@ -1,6 +1,13 @@
-# NIA_Hackathon_RNAseq
+# NIA RNAseq Hackathon README
+
+## Overview
+
+
 
 [Connecting to Biowulf](docs/biowulf.md)
+[Mounting Biowulf disks](docs/mount_disk.md)
+[Connecting RStudio Server](docs/rstudio_server.md)
+[Connecting VScode](docs/vscode.md)
 
 
 ## Overview for hackathon day 1
@@ -16,10 +23,7 @@
 - aligning to reference overview
 - tiny data overview
 
-## Editing scripts
-The simplest way is to mount your `/data` drive following instructions here https://hpc.nih.gov/docs/helixdrive.html and then editing files using VScode.
 
-[VScode web link](https://vscode.dev/)
 
 ## RNAseq permutations
 **Align with**:
