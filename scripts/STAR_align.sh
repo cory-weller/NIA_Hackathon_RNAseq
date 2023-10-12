@@ -13,11 +13,11 @@ echo treatment is ${treatment}
 echo sample is ${sample}
 
 # Define directories and files
-DATADIR='/data/NIA_Hackathon_2023/RNA_sequencing/data'
+DATADIR='data'
 FQ1=${DATADIR}/${treatment}_${sample}_R1.clean.fq.gz
 FQ2=${DATADIR}/${treatment}_${sample}_R2.clean.fq.gz
-INDEX='/data/NIA_Hackathon_2023/RNA_sequencing/STAR_index'
-OUTDIR='/data/NIA_Hackathon_2023/RNA_sequencing/STAR_BAM'
+INDEX='STAR_index'
+OUTDIR='STAR_BAM'
 
 # Create output directory
 mkdir -p ${OUTDIR} 
