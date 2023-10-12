@@ -3,34 +3,12 @@
 ## Overview
 
 
+Helpful tutorials:
+- [Connecting to Biowulf](docs/biowulf.md)
+- [Mounting Biowulf disks](docs/mount_disk.md)
+- [Connecting RStudio Server](docs/rstudio_server.md)
+- [Connecting VScode](docs/vscode.md)
 
-[Connecting to Biowulf](docs/biowulf.md)
-[Mounting Biowulf disks](docs/mount_disk.md)
-[Connecting RStudio Server](docs/rstudio_server.md)
-[Connecting VScode](docs/vscode.md)
-
-
-## Overview for hackathon day 1
-- get required tools
-- connect to biowulf
-- set up data mounted drive
-- navigate directories
-- find our data
-- RNA seq broad overview
-- specific RNAseq tools and how they differ
-- retrieving reference from web
-- preparing reference
-- aligning to reference overview
-- tiny data overview
-
-
-
-## RNAseq permutations
-**Align with**:
-- [Salmon](https://combine-lab.github.io/salmon/) (Transcriptome-based) [Biowulf guide](https://hpc.nih.gov/apps/salmon.html)
-- [Kallisto](https://pachterlab.github.io/kallisto/) (Transcriptome-based) [Biowulf guide](https://hpc.nih.gov/apps/kallisto.html)
-- [STAR](https://github.com/alexdobin/STAR) (Genome + Features File-based) [Biowulf guide](https://hpc.nih.gov/apps/STAR.html)
-- [RSubread](https://bioconductor.org/packages/release/bioc/html/Rsubread.html) (Genome + Features File-based) [Biowulf guide](https://hpc.nih.gov/apps/subread.html)
 
 ## Data location
 Files are located at `/data/NIA_Hackathon_2023/RNA_sequencing` which contains two subfolders, organized as follows:
@@ -86,7 +64,7 @@ The `tiny` files are a random subset of reads, representing about 2% of the full
 The small size files are useful for testing scripts to make sure they work, instead of the big files. Once you know your workflow is correctly built, you can instead use the full-sized files.
 
 ## Create STAR genome index
-See [STAR_index.sh](STAR_index.sh) which was submitted via `sbatch STAR_index.sh`
+See [STAR_index.sh](STAR_index.sh) which was submitted via `sbatch scripts/STAR_index.sh`. The script downloads and unpacks required reference data (genomic `fasta` and annotation `gtf`).
 
 ## Align `fastq` files to the indexed genome
 [`STAR_wrappers.sh`](STAR_wrappers.sh) contains three example functions that will submit all 10 jobs.
@@ -97,16 +75,6 @@ source STAR_wrappers.sh
 
 # submit jobs with the GNU parallel funciton defined in STAR_wrappers.sh
 gnu_parallel
-```
-
-## Index `bam` files
-```bash
-cd /data/NIA_Hackathon_2023/RNA_sequencing/STAR_BAM
-module load samtools
-
-for file in *.bam; do
-    samtools index ${file}
-done
 ```
 
 ## Subset `bam` files
@@ -121,17 +89,4 @@ for file in *.bam; do
     [[ ! -f "tiny${file}" ]] && { samtools view -b -s 0.02 ${file} > "tiny${file}" &&  samtools index "tiny${file}"; }
 done
 
-samtools index tinyFoliate_1_Aligned.sortedByCoord.out.bam
 ```
-
-
-## For hackathon day 2:
-**Analyze with**
-- [DEseq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)
-- [sleuth](https://pachterlab.github.io/sleuth/about)
-
-**Compare at**
-- Transcript-level
-- Gene-level
-
-**Visualize**
