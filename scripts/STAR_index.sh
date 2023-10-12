@@ -7,17 +7,17 @@
 
 # load STAR module, so that the STAR command will work
 module load STAR
-mkdir -p ref
+mkdir -p REF
 
 # Retrieve GTF annotation if necessary
-GTF='ref/Sscrofa11.1.gtf'
+GTF='REF/Sscrofa11.1.gtf'
 GTF_URL='https://ftp.ensembl.org/pub/release-110/gtf/sus_scrofa/Sus_scrofa.Sscrofa11.1.110.gtf.gz'
 [[ ! -f ${GTF} ]] && \
     wget -O ${GTF}.gz ${GTF_URL} && \
     gunzip ${GTF}.gz
 
 # Retrieve reference genome if necessary
-GENOME='ref/Sscrofa11.1.dna.toplevel.fa'
+GENOME='REF/Sscrofa11.1.dna.toplevel.fa'
 GENOME_URL='https://ftp.ensembl.org/pub/release-110/fasta/sus_scrofa/dna/Sus_scrofa.Sscrofa11.1.dna.toplevel.fa.gz'
 [[ ! -f "${GENOME}" ]] && \
     wget -O ${GENOME}.gz ${GENOME_URL} && \
