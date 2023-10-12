@@ -88,5 +88,16 @@ for file in *.bam; do
     echo $i
     [[ ! -f "tiny${file}" ]] && { samtools view -b -s 0.02 ${file} > "tiny${file}" &&  samtools index "tiny${file}"; }
 done
-
 ```
+
+## Get feature counts
+[`getFeatureCounts.sh`](scripts/getFeatureCounts.sh), submitted via `sbatch`, requires two arguments: 
+- tissue type
+- sample number
+
+All 10 jobs can be submitted at once using `parallel`:
+```bash
+parallel -j 1 sbatch scripts/getFeatureCounts.sh ::: Foliate Organoid ::: $(seq 1 5)
+```
+
+Once all of those jobs are finished, the R script [`combineFeatureCounts.R`](scripts/combineFeatureCounts.R) iterates over all tables then generate a single feature counts matrix (rows = genes, columns = samples).
